@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+}
+
+/* Animation loader */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-bottom: 10px solid rgb(235, 235, 235);
+    border-top: 10px solid rgb(235, 235, 235);
+    border-left: 10px solid rgb(0, 0, 0);
+    border-right: 10px solid rgb(0, 0, 0);
+    animation: loader 2s ease infinite;  /* infinite bu doimiy takrorlanuvchi */
+}
+
+.round {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(221, 216, 216, 0.233);
+    backdrop-filter: blur(8 0px);
+    animation: round 3s ease infinite;
+}
+
+@keyframes loader {
+    50% {
+        filter: hue-rotate(720deg); /* qachon sekinlashishi */
+    }
+    100% {
+        transform: rotate(360deg);  
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes round {
+    50% {
+        filter: hue-rotate(720deg); /* qachon sekinlashishi */
+        transform: scale(10);  
+    }
+    100% {
+        filter: hue-rotate(360deg);
+        box-shadow: 0 0 10px inset rgba(0, 0, 0, 0.527);
+    }
+}
